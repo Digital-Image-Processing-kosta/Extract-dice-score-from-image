@@ -1,10 +1,20 @@
 # EXTRACT DICE SCORE
 Extracts the score from blue and red dices from a given image, also it outputs the score for each dice separately.
-Function **'extract_dice_score'** returns 2 numbers that represent the sum of numbers on blue and red dices.
+Function **'extract_dice_score'** returns 2 numbers that represent the sum of numbers on blue and red dices.<br />
 Function **'extract_dice_score_bonus'** returns the score for each dice separately.
 
-### TEST: 
+# IMPLEMENTATION
+The images are converted from RGB to HSV color format, because the idea is to use the saturation channel to extract blue and red dots from the background and to use hue channel to distinguish between red and blue dots. 
+Setting the saturation threshold to 0.5 the image is binarized and the blue and red dots are extracted:<br />
+![img1](https://github.com/Digital-Image-Processing-kosta/Extract-dice-score-from-image/blob/master/garbage/9.png)<br />
+To remove the blue and red dots on the sides morphological operation of erosion is performed:<br />
+![img2](https://github.com/Digital-Image-Processing-kosta/Extract-dice-score-from-image/blob/master/garbage/10.png)<br />
+
+
+
+
+# TEST: 
 Run the **main.py** to test the functions on 12 images.
 
-### NOTE: 
+# NOTE: 
 Hyperparameters are tuned for Matlab 2017.
